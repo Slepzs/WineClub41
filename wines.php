@@ -12,7 +12,10 @@
 
 
   <div class="uk-width-1-3">
-    Her er test content
+    <div class="leftside">
+      <h3>Information</h3>
+      <p>Be sure to add all the necessary information..</p>
+    </div>
   </div>
 
   <div class="uk-width-1-3">
@@ -45,7 +48,7 @@
 
   <div class="uk-width-1-2@s">
 
-       <div uk-form-custom="target: > * > span:first-child">
+       <div class="selectdropdown" uk-form-custom="target: > * > span:first-child">
            <select>
                <option value="">Please select...</option>
                <option value="1">Option 01</option>
@@ -68,6 +71,18 @@
  <div class="uk-width-1-2@s">
    <input class="uk-input" type="text" placeholder="Date">
 </div>
+
+
+ <div class="uk-width-1-1@s">
+
+    <div class="uk-margin" uk-margin>
+        <div uk-form-custom="target: true">
+            <input type="file">
+            <input class="uk-input selectform" type="text" placeholder="Select file" disabled>
+        </div>
+    </div>
+
+    </div>
 
 <div class="uk-width-1-1@s">
   <input class="uk-input" type="text" placeholder="Bought By">
