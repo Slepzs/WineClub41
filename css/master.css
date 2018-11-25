@@ -5,6 +5,9 @@
 body {
   font-family: 'Roboto', sans-serif; }
 
+.uk-button-primary {
+  background-color: #430000; }
+
 .uk-navbar-nav > li.uk-active > a {
   color: #430000;
   font-family: "Roboto", sans-serif; }

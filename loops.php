@@ -25,13 +25,54 @@ function sidebarWines() {
 };
 
 
+function starscalc($wineid) {
+    include('conn.php');
+  $sqls = ("SELECT stars FROM stars where wines_wineid = $wineid");
+  $stmts = $conn->prepare($sqls);
+  $stmts->execute();
+  $stmts->bind_result($stars);
+
+  while($stmts->fetch()) {
+    $starsarray[] = $stars;
+  }
+  $allstars = array_sum($starsarray);
+  $avgstar = $allstars / count($starsarray);
+  echo '<span id="starnumber">' . $avgstar . '</span>';
+  $ss = '';
+  function starsIcon($avgstar) {
+    if($avgstar > 1 && $avgstar < 2) {
+      $ss = '  <i class="fas fa-star"></i>';
+      echo $ss;
+    } elseif($avgstar > 2 && $avgstar < 3 ) {
+      $ss = '  <i class="fas fa-star"></i><i class="fas fa-star"></i>    ';
+          echo $ss;
+    } elseif($avgstar > 3 && $avgstar < 4) {
+      $ss = '  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>  ';
+          echo $ss;
+    } elseif($avgstar > 4 && $avgstar < 5) {
+      $ss = '  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>  ';
+          echo $ss;
+    } elseif($avgstar > 5 && $avgstar < 6) {
+      $ss = '  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>  ';
+      echo $ss;
+    } else {
+    }
+  }
+  starsIcon($avgstar);
+
+}
+
+
 function allWines() {
-  include('conn.php');
+    include('conn.php');
   $sql = ("SELECT wines.*, users.userid, users.username FROM wines JOIN users WHERE users_userid = users.userid");
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $stmt->bind_result($wineid, $wine_name, $wine_region_country, $wine_grapes, $wine_year, $wine_volume, $wine_size, $wine_price, $wine_real_price, $wine_date, $wine_img, $user_userid, $userid, $username);
-  while($stmt->fetch()) { ?>
+
+
+  while($stmt->fetch()) {
+    ?>
   <div class="feed-wines">
     <div class="feed-wines-box uk-flex uk-flex-wrap wine-<?= $wineid ?>">
           <div class="uk-width-1-2">
@@ -74,6 +115,11 @@ function allWines() {
 
             </div>
 
+            <div class="uk-width-1-1">
+              <span class="wineinfo">Rating</span>
+              <p><div id="allratinga"><?php starscalc($wineid); ?></span></div></p>
+            </div>
+
 
             </div>
             </div>
@@ -98,15 +144,16 @@ function allWines() {
       </div>
     </div>
 
-    <div class="givestars">
-      <p>I give: ..
+    <div class="uk-width-1-1 uk-flex uk-flex-wrap givestars">
           <input type="hidden" id="userid" value="<?= $user_userid ?>">
           <input type="hidden" id="wineid" value="<?= $wineid ?>">
-          <input type="text" id="userstars">
-          <button class="submitstars">Submit my rating</button>
-      </p>
+          <div class="uk-width-1-2 winedate">
+            <input class="uk-input" type="text" id="userstars" min="0" max="6">
+          </div>
+          <div class="uk-width-1-2 winedate">
+            <button class="uk-button uk-button-primary submitstars">Rate</button>
+          </div>
     </div>
-    <div id="allratinga">Hallo</div>
 <?php  }
 }
 

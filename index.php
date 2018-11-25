@@ -17,7 +17,6 @@ test
 <div class="uk-width-1-2">
 
 <?php allWines(); ?>
-
 </div>
 
 <div class="uk-width-1-4">

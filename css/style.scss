@@ -11,6 +11,10 @@ $fam: 'Roboto', sans-serif;
 $red: #430000;
 $grey: #f8f8f8;
 
+.uk-button-primary {
+  background-color: $red;
+}
+
 .uk-navbar-nav > li.uk-active > a {
   color: $red;
   font-family: $fam;
@@ -211,7 +215,7 @@ form {
 .givestars {
   margin: 10px;
   padding: 10px;
-  border: 1px solid $red; 
+  border: 1px solid $red;
 }
 
 
