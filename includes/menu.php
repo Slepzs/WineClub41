@@ -5,7 +5,9 @@
             <li class="uk-active"><a href="index.php">Home</a></li>
             <li><a href="#">Feed</a></li>
             <li><a href="wines.php">Wines</a></li>
-            <li><a href="#">Login</a></li>
+            <?php if( $_SESSION['username'] ) { ?>
+              <li><a href="logout.php">Logout</a></li>
+          <?php  } ?>
         </ul>
 
     </div>

@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
           $_SESSION['username'] = $row['username'];
           $_SESSION['admin'] = $row['admin'];
           $succes = '<p>Du har succesfult logget ind ' . $_SESSION['username'] . '. Du vil nu blive redirected</p>';
-          header('Refresh: 2; URL=index.php');
+          header('Refresh: 1; URL=index.php');
         } else {
           echo 'Du har dongoofed'; }
         } else {

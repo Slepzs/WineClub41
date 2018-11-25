@@ -1,4 +1,7 @@
 @import url(uikit.css);
+/*=================================================
+  Standard
+=================================================== */
 body {
   font-family: 'Roboto', sans-serif; }
 
@@ -11,11 +14,61 @@ body {
   font-size: 1em;
   font-family: "Roboto", sans-serif; }
 
+.wrapper {
+  width: 100%;
+  height: 100%; }
+
+.user-login {
+  height: 100vh;
+  background-image: url("../img/loginbackground.jpg");
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  overflow: hidden; }
+  .user-login form {
+    margin: auto;
+    margin-top: 200px;
+    background-color: #00000069;
+    width: 32%;
+    padding: 50px;
+    border-radius: 5px; }
+    .user-login form h1 {
+      color: #FFF;
+      text-transform: uppercase; }
+    .user-login form button {
+      padding: 0px 90px;
+      color: #fff;
+      background-color: #430000; }
+    .user-login form .signup {
+      margin: 0;
+      margin-top: 10px; }
+      .user-login form .signup a {
+        color: rgba(248, 248, 248, 0.7); }
+
+.error-msg {
+  color: #fff; }
+
+canvas {
+  display: block;
+  vertical-align: bottom; }
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%; }
+
+/*=================================================
+  Footer
+=================================================== */
 footer {
   margin-top: 10px;
   width: 100%;
   border-top: 2px solid #430000;
-  background-color: #f8f8f8;
+  background-image: url("../img/footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
   color: #430000;
   height: 300px; }
 
@@ -31,6 +84,9 @@ footer {
   .footer-sections ul {
     list-style-type: none; }
 
+/*=================================================
+  Sidebar
+=================================================== */
 .sidebar {
   padding: 5px;
   margin: 10px;
@@ -64,9 +120,52 @@ form {
 /* =============================================
   Wines - Feed
 ==============================================*/
+.wine-left {
+  padding: 10px; }
+  .wine-left h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-style: italic; }
+  .wine-left p {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #000; }
+  .wine-left a {
+    color: #000; }
+
+.wine-right {
+  padding: 10px; }
+  .wine-right .winedate {
+    text-align: right; }
+
+.wine-right img {
+  height: 300px;
+  float: right; }
+
+.wineinfo {
+  font-style: italic;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #430000; }
+
 .feed-wines {
-  border: 3px solid #430000;
+  margin: 20px 0px; }
+
+.feed-wines-box {
+  border: 1px solid #430000;
+  -webkit-box-shadow: 0px 0px 3px #c5a8a8;
+  box-shadow: 0px 0px 3px #c5a8a8;
   margin: 10px;
   padding: 5px;
   background-color: #f8f8f8;
-  height: 400px; }
+  max-height: 450px;
+  min-height: 400px; }
+
+.givestars {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #430000; }
+
+/*=================================================
+  Standard
+=================================================== */
