@@ -7,7 +7,7 @@ if(isset($_POST['submit'])) {
   } else {
     $sql = "SELECT * FROM users WHERE username=?";
     if (!$stmt = $conn->prepare($sql)) {
-      echo 'Derp';
+      $msg = 'Derp';
     } else {
       $stmt->bind_param('s', $username);
       $stmt->execute();
@@ -18,12 +18,12 @@ if(isset($_POST['submit'])) {
           $_SESSION['userid'] = $row['userid'];
           $_SESSION['username'] = $row['username'];
           $_SESSION['admin'] = $row['admin'];
-          $succes = '<p>Du har succesfult logget ind ' . $_SESSION['username'] . '. Du vil nu blive redirected</p>';
+          $msg = '<p>Du har succesfult logget ind ' . $_SESSION['username'] . '. Du vil nu blive redirected</p>';
           header('Refresh: 1; URL=index.php');
         } else {
-          echo 'Du har dongoofed'; }
+          $msg =  'Du har dongoofed'; }
         } else {
-          echo 'Blev ikke fundet i databasen';
+          $msg = 'Blev ikke fundet i databasen';
         }
       }
     }

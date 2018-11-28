@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php include('loops.php'); ?>
 <?php include('includes/header.php'); ?>
 
 
@@ -97,34 +99,7 @@
   </div>
 
 
-<div class="uk-width-1-6">
-  <div class="sidebar">
-  <h4>Latest Wines</h4>
-  <ul>
-    <li>Test</li>
-    <li>Test</li>
-    <li>Test</li>
-  </ul>
-
-  <h4>Latest Members</h4>
-  <ul>
-    <li>Test</li>
-    <li>Test</li>
-    <li>Test</li>
-  </ul>
-
-
-    <h4>All Wines</h4>
-    <ul>
-      <li>Test</li>
-      <li>Test</li>
-      <li>Test</li>
-    </ul>
-</div>
-
-
-
-  </div>
+<?php include('includes/sidebar.php'); ?>
 </div>
 
 

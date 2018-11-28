@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 <?php include('loops.php'); ?>
+<?php if(isset($_SESSION['username'])) { ?>
 <?php include('includes/header.php'); ?>
+
 
 
 
@@ -9,7 +11,9 @@
 
 <div class="uk-width-1-4">
 
-test
+  <div class="comment-section">
+Comment section implementation
+  </div>
 
 </div>
 
@@ -19,30 +23,10 @@ test
 <?php allWines(); ?>
 </div>
 
-<div class="uk-width-1-4">
-  <div class="sidebar">
-  <h4>Latest Wines</h4>
-  <ul>
-      <?php sidebarWines(); ?>
-  </ul>
 
-  <h4>Latest Members</h4>
-  <ul>
-    <?php newMembers();  ?>
-  </ul>
-
-
-    <h4>All Wines</h4>
-    <ul>
-
-    </ul>
-</div>
-
-
-
+<?php include('includes/sidebar.php'); ?>
 
 </div>
-
 
 
 <script type="text/javascript">
@@ -76,3 +60,4 @@ for (var i = 0; i < button.length; i++) {
 </script>
 
 <?php include("includes/footer.php"); ?>
+<?php } else { Header("Location: login.php"); }; ?>

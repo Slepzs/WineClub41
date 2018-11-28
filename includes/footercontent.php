@@ -4,7 +4,7 @@
   <div class="uk-width-1-3">
     <div class="footer-sections">
     <h3>Kitchen 41 Wine Club</h3>
-    <p>Song made by <strong>Marcus Garsdal</strong><br/><a href="https://soundcloud.com/garsdal/wine-club-41" target="_blank" target="_blank">Wine Club Theme song</a></p>
+    <p><i class="fab fa-soundcloud"></i> Song made by <strong>Marcus Garsdal</strong><br/><a href="https://soundcloud.com/garsdal/wine-club-41" target="_blank" target="_blank">Wine Club Theme song</a></p>
     Website by: <strong>Tobias Heide</strong>
   </div>
   </div>
